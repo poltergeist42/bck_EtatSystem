@@ -53,7 +53,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Autheur:</th><td class="field-body"><a class="reference external" href="https://github.com/poltergeist42">Poltergeist42</a></td>
+<tr class="field-odd field"><th class="field-name">Auteur:</th><td class="field-body"><a class="reference external" href="https://github.com/poltergeist42">Poltergeist42</a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Projet:</th><td class="field-body">bck_EtatSystem</td>
 </tr>
@@ -69,8 +69,8 @@
 </table>
 <div class="section" id="descriptions">
 <h2>Descriptions<a class="headerlink" href="#descriptions" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Ce projet est un projet PowerShell. L&#8217;objectif est de créer des sauvegarde de l&#8217;état
-système au traver des cmdlets powershell de Windows Sever Backup</p>
+<p>Ce projet est un projet PowerShell. L&#8217;objectif est de créer des sauvegardes de l&#8217;état
+système au travers des cmdlets powershell de Windows Sever Backup</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="telechargement-installation">
@@ -99,7 +99,7 @@ l&#8217;entête &#8220;Configuration&#8221;.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">pathBckES:</th><td class="field-body"><p class="first">Permet de définir le disque ou le chemin réseau pour la sauvegarde
 de l&#8217;état système</p>
-<p>N.B : dans le cas d&#8217;une sauvegarde réseau, le chemin doit être indiquer sous
+<p>N.B : dans le cas d&#8217;une sauvegarde réseau, le chemin doit être indiqué sous
 la forme :</p>
 <blockquote>
 <div><ul class="simple">
@@ -221,18 +221,18 @@ tâche planifiée.</p>
 </div></blockquote>
 </div>
 <hr class="docutils" />
-<div class="section" id="restauration-de-l-etat-du-stysteme">
-<h2>Restauration de l&#8217;état du stystème<a class="headerlink" href="#restauration-de-l-etat-du-stysteme" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="restauration-de-l-etat-du-systeme">
+<h2>Restauration de l&#8217;état du système<a class="headerlink" href="#restauration-de-l-etat-du-systeme" title="Lien permanent vers ce titre">¶</a></h2>
 <blockquote>
 <div><ol class="arabic">
-<li><p class="first"><strong>Démarrer en mode réstauration du service d&#8217;annuaire</strong></p>
+<li><p class="first"><strong>Démarrer en mode restauration du service d&#8217;annuaire</strong></p>
 <blockquote>
 <div><ul>
-<li><p class="first">Au démarrage du serveur, Juste avant le lancemant du système, enfoncez /relachez
+<li><p class="first">Au démarrage du serveur, Juste avant le lancement du système, enfoncez /relâchez
 la touche &#8216;F8&#8217; jusqu&#8217;a l&#8217;apparition d&#8217;un menu en mode console.</p>
 </li>
 <li><p class="first">Utilisez les flèches du clavier &#8216;Haut&#8217; et &#8216;Bas&#8217; pour se déplacer dans le menu.
-Séléctionnez l&#8217;item &#8220;mode de réstauration du service d&#8217;annuaire&#8221; et appuyez sur
+Sélectionnez l&#8217;item &#8220;mode de restauration du service d&#8217;annuaire&#8221; et appuyez sur
 &#8216;Entré&#8217; pour valider.</p>
 <p><strong>N.B</strong> : Vous devrez renseigner le nom d&#8217;utilisateur et le mot de passe du
 compte que vous avez renseigné lors de la création de l&#8217;AD.</p>
@@ -243,7 +243,7 @@ compte que vous avez renseigné lors de la création de l&#8217;AD.</p>
 <li><p class="first"><strong>Identifier la version de l&#8217;état du système à restaurer</strong></p>
 <blockquote>
 <div><ul>
-<li><p class="first">Ouvrez une console powershell et saisir la commande :</p>
+<li><p class="first">Ouvrez une console PowerShell et saisir la commande :</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">WBBackupSet</span>
 </pre></div>
 </div>
@@ -280,7 +280,7 @@ est bien présent.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Lancez la réstauration :</p>
+<li><p class="first">Lancez la restauration :</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>Start-WBSystemStateRecovery -BackupSet $varBck -AuthoritativeSysvolRecovery -RestartComputer
     # N.B : Si vous ajoutez le paramètre &#39;-Force&#39; à la fin de cette commande,
     # Le serveur lancera la restauration sans vous demander confirmation
@@ -336,7 +336,7 @@ depuis GitHub.</p>
 <li><a class="reference internal" href="#descriptions">Descriptions</a></li>
 <li><a class="reference internal" href="#telechargement-installation">Téléchargement / Installation</a></li>
 <li><a class="reference internal" href="#utilisation">Utilisation</a></li>
-<li><a class="reference internal" href="#restauration-de-l-etat-du-stysteme">Restauration de l&#8217;état du stystème</a></li>
+<li><a class="reference internal" href="#restauration-de-l-etat-du-systeme">Restauration de l&#8217;état du système</a></li>
 <li><a class="reference internal" href="#arborescence-du-projet">Arborescence du projet</a></li>
 </ul>
 </li>
