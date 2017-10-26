@@ -4,13 +4,13 @@ Informations générales bck_EtatSystem
 
 :Autheur:            `Poltergeist42 <https://github.com/poltergeist42>`_
 :Projet:             bck_EtatSystem
-:dépôt GitHub:       
-:documentation:      
+:dépôt GitHub:       https://github.com/poltergeist42/bck_EtatSystem.git
+:documentation:      https://poltergeist42.github.io/bck_EtatSystem/
 :Licence:            CC BY-NC-SA 4.0
 :Liens:              https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 Descriptions
-===========
+============
 
 Ce projet est un projet PowerShell. L'objectif est de créer des sauvegarde de l'état
 système au traver des cmdlets powershell de Windows Sever Backup
@@ -20,8 +20,8 @@ système au traver des cmdlets powershell de Windows Sever Backup
 Téléchargement / Installation
 =============================
 
-Vous pouvez télécharger le projet entier directement depuis son `dépôt GitHub <entrer_url_here>`_ .
-ou récupérer juste le script depuis le dossier `_3_software du dépôt GitHub <enter_url_here>`_ .
+Vous pouvez télécharger le projet entier directement depuis son `dépôt GitHub <https://github.com/poltergeist42/bck_EtatSystem>`_ .
+ou récupérer juste le script depuis le dossier `_3_software du dépôt GitHub <https://github.com/poltergeist42/bck_EtatSystem/tree/master/_3_software>`_ .
 
 Le script n'a pas besoin d'installation, il doit simplement être exécuté.
 
@@ -47,10 +47,12 @@ Utilisation
             
             N.B : dans le cas d'une sauvegarde réseau, le chemin doit être indiquer sous
             la forme :
+            
                 * "\\servername\sharedFolder\"
 
         :verbose:
             Permet d'afficher dans la console, l'état de la sauvegarde
+            
                 * $TRUE    --> Affichage activé
                 * $FALSE   --> Affichage désactivé
 
@@ -58,12 +60,14 @@ Utilisation
             Permet de définir l'encodage des fichiers et du mail. La valeur "Default",
             récupère l'encodage du système depuis lequel est exécuter ce script.
             Les valeurs acceptées sont :
+            
                 * "Unicode", "UTF7", "UTF8", "ASCII", "UTF32", "BigEndianUnicode",
                   "Default", "OEM"
     
         :vCfgSendMail:
             Permet d'activer ou de désactiver l'envoie automatique du fichier '.csv' par
             mail. Les valeurs acceptées sont :
+            
                 * $TRUE   --> Envoie de mail activé
                 * $False  --> Envoie de mail désactivé
                 
@@ -93,6 +97,7 @@ Utilisation
         :vCfgSendMailAuth:
             Permet d'activer ou de désactiver l'authentification sur le SMTP.
             Les valeurs acceptées sont :
+            
                 * $FALSE  --> Pas d'authentification
                 * $TRUE   --> Authentification
 

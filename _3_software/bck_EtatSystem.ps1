@@ -4,10 +4,10 @@ Infos
 
     :Projet:             bck_EtatSystem
     :Nom du fichier:     bck_EtatSystem.ps1
-    :depot_GitHub:       
-    :Documentation:      
+    :dépôt GitHub:       https://github.com/poltergeist42/bck_EtatSystem.git
+    :documentation:      https://poltergeist42.github.io/bck_EtatSystem/
     :Auteur:            `Poltergeist42 <https://github.com/poltergeist42>`_
-    :Version:            20171025
+    :Version:            20171026
 
 ####
 
