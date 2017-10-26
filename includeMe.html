@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>README &#8212; documentation bck_EtatSystem </title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="readme">
+<h1>README<a class="headerlink" href="#readme" title="Lien permanent vers ce titre">¶</a></h1>
+</div>
+<div class="section" id="informations-generales-bck-etatsystem">
+<h1>Informations générales bck_EtatSystem<a class="headerlink" href="#informations-generales-bck-etatsystem" title="Lien permanent vers ce titre">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Autheur:</th><td class="field-body"><a class="reference external" href="https://github.com/poltergeist42">Poltergeist42</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Projet:</th><td class="field-body">bck_EtatSystem</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">dépôt GitHub:</th><td class="field-body"><a class="reference external" href="https://github.com/poltergeist42/bck_EtatSystem.git">https://github.com/poltergeist42/bck_EtatSystem.git</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">documentation:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Licence:</th><td class="field-body">CC BY-NC-SA 4.0</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Liens:</th><td class="field-body"><a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">https://creativecommons.org/licenses/by-nc-sa/4.0/</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="descriptions">
+<h2>Descriptions<a class="headerlink" href="#descriptions" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ce projet est un projet PowerShell. L&#8217;objectif est de créer des sauvegarde de l&#8217;état
+système au traver des cmdlets powershell de Windows Sever Backup</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="telechargement-installation">
+<h2>Téléchargement / Installation<a class="headerlink" href="#telechargement-installation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous pouvez télécharger le projet entier directement depuis son <a class="reference external" href="entrer_url_here">dépôt GitHub</a> .
+ou récupérer juste le script depuis le dossier <a class="reference external" href="enter_url_here">_3_software du dépôt GitHub</a> .</p>
+<p>Le script n&#8217;a pas besoin d&#8217;installation, il doit simplement être exécuté.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="utilisation">
+<h2>Utilisation<a class="headerlink" href="#utilisation" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first"><strong>Personnalisation</strong></p>
+<blockquote>
+<div><p>Se script doit être personnalisé. Pour faciliter cette personnalisation,
+l&#8217;ensemble des variables à modifier ont été placées au début du script sous
+l&#8217;entête &#8220;Configuration&#8221;.</p>
+<p><strong>Détail des variables à personnaliser</strong> :</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">clientName:</th><td class="field-body"><p class="first">Permet de renseigner le nom du client. Ce nom est utilisé dans l&#8217;envoie de Mail</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">pathBckES:</th><td class="field-body"><p class="first">Permet de définir le disque ou le chemin réseau pour la sauvegarde
+de l&#8217;état système</p>
+<p>N.B : dans le cas d&#8217;une sauvegarde réseau, le chemin doit être indiquer sous
+la forme :</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;\servernamesharedFolder&#8221;</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">verbose:</th><td class="field-body"><dl class="first last docutils">
+<dt>Permet d&#8217;afficher dans la console, l&#8217;état de la sauvegarde</dt>
+<dd><ul class="first last simple">
+<li>$TRUE    &#8211;&gt; Affichage activé</li>
+<li>$FALSE   &#8211;&gt; Affichage désactivé</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">vCfgEncoding:</th><td class="field-body"><blockquote class="first">
+<div><p>Permet de définir l&#8217;encodage des fichiers et du mail. La valeur &#8220;Default&#8221;,
+récupère l&#8217;encodage du système depuis lequel est exécuter ce script.
+Les valeurs acceptées sont :</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;Unicode&#8221;, &#8220;UTF7&#8221;, &#8220;UTF8&#8221;, &#8220;ASCII&#8221;, &#8220;UTF32&#8221;, &#8220;BigEndianUnicode&#8221;,
+&#8220;Default&#8221;, &#8220;OEM&#8221;</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">vCfgSendMail:</th><td class="field-body"><p class="first">Permet d&#8217;activer ou de désactiver l&#8217;envoie automatique du fichier &#8216;.csv&#8217; par
+mail. Les valeurs acceptées sont :</p>
+<blockquote>
+<div><ul class="simple">
+<li>$TRUE   &#8211;&gt; Envoie de mail activé</li>
+<li>$False  &#8211;&gt; Envoie de mail désactivé</li>
+</ul>
+</div></blockquote>
+<p><strong>N.B</strong> : Cette fonctionnalité est désactivé par défaut ($FALSE)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">vCfgSendMailFrom:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Adresse mail de l&#8217;expéditeur</p>
+<p><strong>Attention</strong> : &#8220;<a class="reference external" href="mailto:user01&#37;&#52;&#48;example&#46;com">user01<span>&#64;</span>example<span>&#46;</span>com</a>&#8221; doit être remplacé par l&#8217;adresse de
+l&#8217;expéditeur dans la version en production de ce script.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">vCfgSendMailTo:</th><td class="field-body"><p class="first">Adresse Mail du destinataire</p>
+<p><strong>Attention</strong> : &#8220;<a class="reference external" href="mailto:user02&#37;&#52;&#48;example&#46;com">user02<span>&#64;</span>example<span>&#46;</span>com</a>&#8221; doit être remplacé par l&#8217;adresse
+du destinataire dans la version en production de ce script.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">vCfgSendMailSmtp:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Serveur SMTP à utiliser pour l&#8217;envoie de Mail.</p>
+<p><strong>Attention</strong> : &#8220;smtp.serveur.com&#8221; doit être remplacé par votre serveur SMTP
+dans la version en production de ce script.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">vCfgSendMailPort:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Numéro de port utilisé par le serveur SMTP.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">vCfgSendMailAuth:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Permet d&#8217;activer ou de désactiver l&#8217;authentification sur le SMTP.
+Les valeurs acceptées sont :</p>
+<blockquote>
+<div><ul class="simple">
+<li>$FALSE  &#8211;&gt; Pas d&#8217;authentification</li>
+<li>$TRUE   &#8211;&gt; Authentification</li>
+</ul>
+</div></blockquote>
+<p><strong>N.B</strong> : Si le serveur SMTP nécessite une authentification ($TRUE),
+les variables : &#8216;vCfgSendMailUsr&#8217; et &#8216;vCfgSendMailPwd&#8217;
+seront également à renseigner. Ce mode est activé par défaut en cas d&#8217;envoie
+automatique d&#8217;un mail depuis se script.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">vCfgSendMailUsr:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first">Login utilisé pour l&#8217;authentification du SMTP.</p>
+<p><strong>Attention</strong> : &#8220;<a class="reference external" href="mailto:user&#37;&#52;&#48;domain&#46;dom">user<span>&#64;</span>domain<span>&#46;</span>dom</a>&#8221; doit être remplacé par votre nom
+d&#8217;utilisateur dans la version en production de ce script.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">vCfgSendMailPwd:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first">Mot de passe utiliser avec le login du compte  d&#8217;authentification SMTP.</p>
+<p class="last"><strong>Attention</strong> : &#8220;<a class="reference external" href="mailto:P&#37;&#52;&#48;sSwOrd">P<span>&#64;</span>sSwOrd</a>&#8221; doit être remplace par votre mot de passe
+dans la version en production de ce script.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first"><strong>Automatisation et planification</strong></p>
+<blockquote>
+<div><p>Si la tâche doit être effectuée régulièrement, il faut créer une tache planifié.
+On peut s&#8217;aider de la page ci-dessous pour exécuter un script PowerShell dans une
+tâche planifiée.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://www.adminpasbete.fr/executer-script-powershell-via-tache-planifiee/">https://www.adminpasbete.fr/executer-script-powershell-via-tache-planifiee/</a></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="restauration-de-l-etat-du-stysteme">
+<h2>Restauration de l&#8217;état du stystème<a class="headerlink" href="#restauration-de-l-etat-du-stysteme" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first"><strong>Démarrer en mode réstauration du service d&#8217;annuaire</strong></p>
+<blockquote>
+<div><ul>
+<li><p class="first">Au démarrage du serveur, Juste avant le lancemant du système, enfoncez /relachez
+la touche &#8216;F8&#8217; jusqu&#8217;a l&#8217;apparition d&#8217;un menu en mode console.</p>
+</li>
+<li><p class="first">Utilisez les flèches du clavier &#8216;Haut&#8217; et &#8216;Bas&#8217; pour se déplacer dans le menu.
+Séléctionnez l&#8217;item &#8220;mode de réstauration du service d&#8217;annuaire&#8221; et appuyez sur
+&#8216;Entré&#8217; pour valider.</p>
+<p><strong>N.B</strong> : Vous devrez renseigner le nom d&#8217;utilisateur et le mot de passe du
+compte que vous avez renseigné lors de la création de l&#8217;AD.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Identifier la version de l&#8217;état du système à restaurer</strong></p>
+<blockquote>
+<div><ul>
+<li><p class="first">Ouvrez une console powershell et saisir la commande :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">WBBackupSet</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Vous devriez obtenir une liste de plusieurs tableau présentés sous cette forme :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">VersionId</span>        <span class="p">:</span> <span class="mi">10</span><span class="o">/</span><span class="mi">25</span><span class="o">/</span><span class="mi">2017</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">BackupTime</span>       <span class="p">:</span> <span class="mi">25</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">2017</span> <span class="mi">22</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">27</span>
+<span class="n">BackupTarget</span>     <span class="p">:</span> <span class="n">D</span><span class="p">:</span>
+<span class="n">RecoverableItems</span> <span class="p">:</span> <span class="n">Volumes</span><span class="p">,</span> <span class="n">SystemState</span><span class="p">,</span> <span class="n">Applications</span><span class="p">,</span> <span class="n">Files</span><span class="p">,</span> <span class="n">BareMetalRecovery</span>
+<span class="n">Volume</span>           <span class="p">:</span> <span class="p">{</span><span class="n">Réservé</span> <span class="n">au</span> <span class="n">système</span><span class="p">,</span> <span class="n">Disque</span> <span class="n">local</span> <span class="p">(</span><span class="n">C</span><span class="p">:)}</span>
+<span class="n">Application</span>      <span class="p">:</span> <span class="p">{</span><span class="n">FRS</span><span class="p">,</span> <span class="n">AD</span><span class="p">,</span> <span class="n">Registry</span><span class="p">}</span>
+<span class="n">VssBackupOption</span>  <span class="p">:</span> <span class="n">VssFullBackup</span>
+<span class="n">SnapshotId</span>       <span class="p">:</span> <span class="n">d6655a57</span><span class="o">-</span><span class="mi">0676</span><span class="o">-</span><span class="mi">4</span><span class="n">a29</span><span class="o">-</span><span class="n">a9ae</span><span class="o">-</span><span class="mi">05</span><span class="n">ba848f7c43</span>
+<span class="n">BackupSetId</span>      <span class="p">:</span> <span class="n">d012671d</span><span class="o">-</span><span class="mi">445</span><span class="n">b</span><span class="o">-</span><span class="mi">4</span><span class="n">b64</span><span class="o">-</span><span class="mi">8</span><span class="n">c67</span><span class="o">-</span><span class="n">be861c7ef5b9</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">A l&#8217;aide de la propriété <strong>&#8216;BackupTime&#8217;</strong>, repérez la date de la sauvegarde qui
+vous intéresse.</p>
+</li>
+<li><p class="first">Vérifiez dans la propriété <strong>&#8216;RecoverableItems&#8217;</strong> que l&#8217;item <strong>&#8216;SystemState&#8217;</strong>
+est bien présent.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Restaurer l&#8217;état du système depuis une sauvegarde</strong></p>
+<blockquote>
+<div><ul>
+<li><p class="first">Récupérez, dans une variable, la sauvegarde qui vous intéresse :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$varBck = Get-WBBackupSet | where { $_.VersionId  -like &quot;10/25/2017-20:00&quot; }
+  # N.B : Pensez à remplacer la valeur entre guillemet par la valeur
+  # &#39;VersionId&#39; de votre sauvegarde
+</pre></div>
+</div>
+</li>
+<li><p class="first">Lancez la réstauration :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Start-WBSystemStateRecovery -BackupSet $varBck -AuthoritativeSysvolRecovery -RestartComputer
+    # N.B : Si vous ajoutez le paramètre &#39;-Force&#39; à la fin de cette commande,
+    # Le serveur lancera la restauration sans vous demander confirmation
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<hr class="docutils" />
+<div class="section" id="arborescence-du-projet">
+<h2>Arborescence du projet<a class="headerlink" href="#arborescence-du-projet" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour aider à la compréhension de mon organisation, voici un bref descriptif de
+L&#8217;arborescence de ce projet. Cette arborescence est à reproduire si vous récupérez ce dépôt
+depuis GitHub.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">openFile</span>               <span class="c1"># Dossier racine du projet (non versionner)</span>
+<span class="o">|</span>
+<span class="o">+--</span><span class="n">project</span>             <span class="c1"># (branch master) contient l&#39;ensemble du projet en lui même</span>
+<span class="o">|</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="o">+--</span><span class="n">_1_userDoc</span>       <span class="c1"># Contiens toute la documentation relative au projet</span>
+<span class="o">|</span>  <span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span>  <span class="o">|</span>   \<span class="o">--</span><span class="n">source</span>       <span class="c1"># Dossier réunissant les sources utilisées par Sphinx</span>
+<span class="o">|</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="o">+--</span><span class="n">_2_modelisation</span>  <span class="c1"># Contiens tous les plans et toutes les modélisations du projet</span>
+<span class="o">|</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="o">+--</span><span class="n">_3_software</span>      <span class="c1"># Contiens toute la partie programmation du projet</span>
+<span class="o">|</span>  <span class="o">|</span>
+<span class="o">|</span>  \<span class="o">--</span><span class="n">_4_PCB</span>           <span class="c1"># Contient toutes les parties des circuits imprimés (routage,</span>
+<span class="o">|</span>                      <span class="c1"># Implantation, typon, fichier de perçage, etc.</span>
+<span class="o">|</span>
+\<span class="o">--</span><span class="n">webDoc</span>              <span class="c1"># Dossier racine de la documentation qui doit être publiée</span>
+   <span class="o">|</span>
+   \<span class="o">--</span><span class="n">html</span>             <span class="c1"># (branch gh-pages) C&#39;est dans ce dossier que Sphinx vat</span>
+                       <span class="c1"># générer la documentation à publier sur internet</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des Matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">README</a></li>
+<li><a class="reference internal" href="#informations-generales-bck-etatsystem">Informations générales bck_EtatSystem</a><ul>
+<li><a class="reference internal" href="#descriptions">Descriptions</a></li>
+<li><a class="reference internal" href="#telechargement-installation">Téléchargement / Installation</a></li>
+<li><a class="reference internal" href="#utilisation">Utilisation</a></li>
+<li><a class="reference internal" href="#restauration-de-l-etat-du-stysteme">Restauration de l&#8217;état du stystème</a></li>
+<li><a class="reference internal" href="#arborescence-du-projet">Arborescence du projet</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/includeMe.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Poltergeist42.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/includeMe.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
