@@ -24,7 +24,7 @@ Infos
 Descriptif
 ==========
 
-    :Projet:            Ce projet est un projet PowerShell. L'objectif est de créer des sauvegarde de l'état système au traver 
+    :Projet:            Ce projet est un projet PowerShell. L'objectif est de créer des sauvegardes de l'état système au travers 
                         des cmdlets powershell de Windows Sever Backup
 ####
 
@@ -64,7 +64,7 @@ $clientName = "Mon super client"
 
 $pathBckES = "d:"
     # Permet de définir le disque ou le chemin réseau pour la sauvegarde de l'état système
-    # N.B : dans le cas d'une sauvegarde réseau, le chemin doit être indiquer sous la forme :
+    # N.B : dans le cas d'une sauvegarde réseau, le chemin doit être indiqué sous la forme :
     # "\\servername\sharedFolder\"
 
 $verbose = $FALSE
@@ -142,7 +142,7 @@ $vCfgSendMailPwd = "P@sSwOrd"
 ##########################
 
 $Policy = New-WBPolicy
-    # Création d'un nouveau contener 'Policy'
+    # Création d'un nouveau container 'Policy'
     
 $BackupLocation  = New-WBBackupTarget -VolumePath $pathBckES
 
@@ -162,10 +162,10 @@ $computerName = (Get-WmiObject win32_operatingSystem).csname
 #########################
 
 Add-WBBackupTarget -Policy $Policy -Target $BackupLocation
-    # Ajout du chemin de destination au contener 'Policy'
+    # Ajout du chemin de destination au container 'Policy'
     
 Add-WBSystemState $Policy
-    # Ajout, dans le contener 'Policy', de l'état du système à la liste des objet à sauvegarder.
+    # Ajout, dans le container 'Policy', de l'état du système à la liste des objet à sauvegarder.
 
 if ($verbose -eq $FALSE) {
     Start-WBBackup -Policy $Policy -AllowDeleteOldBackups -Force | Out-Null

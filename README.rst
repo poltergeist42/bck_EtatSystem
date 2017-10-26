@@ -2,7 +2,7 @@
 Informations générales bck_EtatSystem
 =====================================
 
-:Autheur:            `Poltergeist42 <https://github.com/poltergeist42>`_
+:Auteur:            `Poltergeist42 <https://github.com/poltergeist42>`_
 :Projet:             bck_EtatSystem
 :dépôt GitHub:       https://github.com/poltergeist42/bck_EtatSystem.git
 :documentation:      https://poltergeist42.github.io/bck_EtatSystem/
@@ -12,8 +12,8 @@ Informations générales bck_EtatSystem
 Descriptions
 ============
 
-Ce projet est un projet PowerShell. L'objectif est de créer des sauvegarde de l'état
-système au traver des cmdlets powershell de Windows Sever Backup
+Ce projet est un projet PowerShell. L'objectif est de créer des sauvegardes de l'état
+système au travers des cmdlets powershell de Windows Sever Backup
 
 ####
 
@@ -45,7 +45,7 @@ Utilisation
             Permet de définir le disque ou le chemin réseau pour la sauvegarde
             de l'état système
             
-            N.B : dans le cas d'une sauvegarde réseau, le chemin doit être indiquer sous
+            N.B : dans le cas d'une sauvegarde réseau, le chemin doit être indiqué sous
             la forme :
             
                 * "\\servername\sharedFolder\"
@@ -130,16 +130,16 @@ Utilisation
     
 ####
 
-Restauration de l'état du stystème
+Restauration de l'état du système
 ==================================
 
-    #. **Démarrer en mode réstauration du service d'annuaire**
+    #. **Démarrer en mode restauration du service d'annuaire**
     
-        * Au démarrage du serveur, Juste avant le lancemant du système, enfoncez /relachez
+        * Au démarrage du serveur, Juste avant le lancement du système, enfoncez /relâchez
           la touche 'F8' jusqu'a l'apparition d'un menu en mode console.
           
         * Utilisez les flèches du clavier 'Haut' et 'Bas' pour se déplacer dans le menu.
-          Séléctionnez l'item "mode de réstauration du service d'annuaire" et appuyez sur
+          Sélectionnez l'item "mode de restauration du service d'annuaire" et appuyez sur
           'Entré' pour valider.
           
           **N.B** : Vous devrez renseigner le nom d'utilisateur et le mot de passe du
@@ -147,7 +147,7 @@ Restauration de l'état du stystème
           
     #. **Identifier la version de l'état du système à restaurer**
     
-        * Ouvrez une console powershell et saisir la commande : ::
+        * Ouvrez une console PowerShell et saisir la commande : ::
         
             Get-WBBackupSet
             
@@ -177,7 +177,7 @@ Restauration de l'état du stystème
               # N.B : Pensez à remplacer la valeur entre guillemet par la valeur
               # 'VersionId' de votre sauvegarde
               
-        * Lancez la réstauration : ::
+        * Lancez la restauration : ::
         
             Start-WBSystemStateRecovery -BackupSet $varBck -AuthoritativeSysvolRecovery -RestartComputer
                 # N.B : Si vous ajoutez le paramètre '-Force' à la fin de cette commande,
