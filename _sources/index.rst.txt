@@ -10,8 +10,8 @@ Welcome to bck_EtatSystem's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-    includeMe
-    Bug_ToDoLst
+   includeMe
+   Bug_ToDoLst
 
 Indices and tables
 ==================
