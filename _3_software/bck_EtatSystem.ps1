@@ -7,7 +7,7 @@ Infos
     :dépôt GitHub:       https://github.com/poltergeist42/bck_EtatSystem.git
     :documentation:      https://poltergeist42.github.io/bck_EtatSystem/
     :Auteur:            `Poltergeist42 <https://github.com/poltergeist42>`_
-    :Version:            20171026
+    :Version:            20171031-dev
 
 ####
 
@@ -155,42 +155,64 @@ $dte = (get-date).AddDays(-1)
     
 $computerName = (Get-WmiObject win32_operatingSystem).csname
 
+## identification du type de commande disponibles
+$chkCmdletWB = get-module -ListAvailable | where {($_.ModuleType -like "Manifest") -and ($_.Name -like "WindowsServerBackup")}
+
+$Error.Clear()
+$chkAppWB = get-command "wbadmin" -ErrorAction "silentlycontinue"
+if($Error.Count -ne 0) { #Si on a une erreur
+    $chkAppWB = $FALSE
+}
+
+
 #########################
 #                       #
 #         Main          #
 #                       #
 #########################
 
-Add-WBBackupTarget -Policy $Policy -Target $BackupLocation
-    # Ajout du chemin de destination au container 'Policy'
+
+if ($chkCmdletWB) {
+    Add-WBBackupTarget -Policy $Policy -Target $BackupLocation
+        # Ajout du chemin de destination au container 'Policy'
     
-Add-WBSystemState $Policy
-    # Ajout, dans le container 'Policy', de l'état du système à la liste des objet à sauvegarder.
+    Add-WBSystemState $Policy
+        # Ajout, dans le container 'Policy', de l'état du système à la liste des objet à sauvegarder.
 
-if ($verbose -eq $FALSE) {
-    Start-WBBackup -Policy $Policy -AllowDeleteOldBackups -Force | Out-Null
-}
-else {
-    Start-WBBackup -Policy $Policy -AllowDeleteOldBackups -Force
-}
+    if ($verbose -eq $FALSE) {
+        Start-WBBackup -Policy $Policy -AllowDeleteOldBackups -Force | Out-Null
+    }
+    else {
+        Start-WBBackup -Policy $Policy -AllowDeleteOldBackups -Force
+    }
 
-$statusBrut = Get-WBBackupSet
+    $statusBrut = Get-WBBackupSet
 
-foreach ($i in $statusBrut) {
-    $iBckShort = $i.BackupTime
-    if ($iBckShort -ge $dte) {
-        foreach ($itm in $i){
-            $VersionID = $itm.VersionID
-            $BackupTime = $itm.BackupTime
-            $BackupTarget = $itm.BackupTarget
-            $RecoverableItems = $itm.RecoverableItems
-            $Volume = $itm.Volume
-            $Application = $itm.Application
-            $SnapshotId = $itm.SnapshotId
-            $BackupSetId = $itm.BackupSetId
+    foreach ($i in $statusBrut) {
+        $iBckShort = $i.BackupTime
+        if ($iBckShort -ge $dte) {
+            foreach ($itm in $i){
+                $VersionID = $itm.VersionID
+                $BackupTime = $itm.BackupTime
+                $BackupTarget = $itm.BackupTarget
+                $RecoverableItems = $itm.RecoverableItems
+                $Volume = $itm.Volume
+                $Application = $itm.Application
+                $SnapshotId = $itm.SnapshotId
+                $BackupSetId = $itm.BackupSetId
+            }
         }
     }
 }
+elseif ($chkAppWB) {
+
+# instruction WBAdmin ici
+
+}
+else {
+    write-host "Votre système ne contien pas les éléments nécéssaires"
+}
+    
 
 ##########################
 #                        #
