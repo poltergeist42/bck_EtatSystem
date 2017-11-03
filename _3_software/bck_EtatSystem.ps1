@@ -7,7 +7,7 @@ Infos
     :dépôt GitHub:       https://github.com/poltergeist42/bck_EtatSystem.git
     :documentation:      https://poltergeist42.github.io/bck_EtatSystem/
     :Auteur:            `Poltergeist42 <https://github.com/poltergeist42>`_
-    :Version:            20171031-dev
+    :Version:            20171103
 
 ####
 
@@ -35,6 +35,9 @@ Reference Web
         # Windows Server Backup Cmdlets in Windows PowerShell
         #
         # N.B : ces cmdlets remplacent la commandes DOS 'WBAdmin'
+
+    * https://technet.microsoft.com/fr-fr/library/cc754015(v=ws.10).aspx
+        # Doc microsoft WBAdmin
 
     * https://www.pluralsight.com/blog/tutorials/backup-and-restore-active-directory-on-windows-server-2008
         # Tutorial expliquant comment sauvegarde et restaurer l'état Système (avec WBadmin)
@@ -151,7 +154,9 @@ if ($vCfgSendMailAuth) {
     $CredentialMail = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $vCfgSendMailUsr, $vMailPwd
 }
 
-$dte = (get-date).AddDays(-1)
+$vAddDay = -0.5
+$dte = (get-date).AddDays($vAddDay)
+$dteShotStr = ((get-date).adddays($vAddDay)).ToShortDateString()
     
 $computerName = (Get-WmiObject win32_operatingSystem).csname
 
@@ -163,6 +168,9 @@ $chkAppWB = get-command "wbadmin" -ErrorAction "silentlycontinue"
 if($Error.Count -ne 0) { #Si on a une erreur
     $chkAppWB = $FALSE
 }
+
+$setCopy = $False
+$bodyData = ""
 
 
 #########################
@@ -205,9 +213,21 @@ if ($chkCmdletWB) {
     }
 }
 elseif ($chkAppWB) {
-
-# instruction WBAdmin ici
-
+    wbadmin start systemstatebackup -backupTarget: $pathBckES -quiet
+    $wGv = wbadmin get versions
+    
+    foreach ($i in $wGv) {
+        if ($i -like "*$dteShotStr*") { 
+            $setCopy = $True
+        }
+        if ($setCopy) {
+            if (-not $i) {
+                $setCopy = $False
+                break
+            }
+            $bodyData += "`t`t$i`n"
+        }
+    }
 }
 else {
     write-host "Votre système ne contien pas les éléments nécéssaires"
@@ -220,6 +240,7 @@ else {
 #                        #
 ##########################
 
+if ($chkCmdletWB) {
 $vBody = @"
 Bonjour.
 
@@ -240,6 +261,23 @@ N.B : Le chemin des journaux pour WindowsBackup se trouve :
 
 Cordialement, l'équipe ICS
 "@
+        
+}
+
+if ($chkAppWB) {
+$vBody = @"
+Bonjour.
+
+Voici le résumé de la dernière sauvegarde de l'état du système du serveur : $computerName du client : $clientName
+
+$bodyData
+
+N.B : Le chemin des journaux pour WindowsBackup se trouve :
+    * C:\Windows\Logs\WindowsServerBackup\
+
+Cordialement, l'équipe ICS
+"@
+}
 
 if ($vCfgSendMail) {
     if ($vCfgSendMailAuth) {
